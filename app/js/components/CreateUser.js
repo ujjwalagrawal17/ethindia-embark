@@ -85,45 +85,45 @@ class CreateUser extends Component {
 
     state[input] = value;
 
-    if (input === 'username') {
-
-      state.usernameHasChanged = true;
-
-      if (value.length >= 5) {
-
-        // ensure we're not already loading the last lookup
-        if (!this.state.isLoading) {
-
-          // call the userExists method in our contract asynchronously
-          // .then((exists) => {
-            
-          //   // stop loading state
-          //   state.isLoading = false;
-
-          //   // show error to user if user doesn't exist
-          //   state.error = exists ? 'Username not available' : '';
-            
-          //   this.setState(state);
-
-          // }).catch((err) => {
-            
-          //   // stop loading state
-          //   state.isLoading = false;
-
-          //   // show error message to user
-          //   state.error = err.message;
-
-          //   this.setState(state);
-          // });
-
-          // set loading state while checking the contract
-          state.isLoading = true;
-        }
-
-        // we are loading already, do nothing while we wait
-        return true;
-      }
-    }
+    // if (input === 'username') {
+    //
+    //   state.usernameHasChanged = true;
+    //
+    //   // if (value.length >= 5) {
+    //
+    //     // ensure we're not already loading the last lookup
+    //     if (!this.state.isLoading) {
+    //
+    //       // call the userExists method in our contract asynchronously
+    //       // .then((exists) => {
+    //
+    //       //   // stop loading state
+    //       //   state.isLoading = false;
+    //
+    //       //   // show error to user if user doesn't exist
+    //       //   state.error = exists ? 'Username not available' : '';
+    //
+    //       //   this.setState(state);
+    //
+    //       // }).catch((err) => {
+    //
+    //       //   // stop loading state
+    //       //   state.isLoading = false;
+    //
+    //       //   // show error message to user
+    //       //   state.error = err.message;
+    //
+    //       //   this.setState(state);
+    //       // });
+    //
+    //       // set loading state while checking the contract
+    //       state.isLoading = true;
+    //     }
+    //
+    //     // we are loading already, do nothing while we wait
+    //     return true;
+    //   // }
+    // }
 
     this.setState(state);
   }
@@ -184,7 +184,6 @@ class CreateUser extends Component {
                 value={ this.state.username }
                 disabled={ isLoading }
                 placeholder="germany2018champs"
-                onKeyPress={ (e) => e.key === '@' || e.key === ' ' ? e.preventDefault() : true }
                 onChange={ (e) => this._handleChange(e) }
                 name="username"
                 autoComplete="off"
